@@ -1,4 +1,7 @@
-# vue-news
+# Current News
+
+## Live
+[Click Me](https://narioalvin.github.io/vue-current-news/)
 
 ## Project setup
 ```
