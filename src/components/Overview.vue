@@ -1,6 +1,10 @@
 <template>
   <div class="overview">
-    <div class="main">
+    <div class="loader" v-if="loading">
+      <img src="../assets/img/news.svg" alt="" />
+      <b-spinner></b-spinner>
+    </div>
+    <div class="main" v-else>
       <div class="header">
         <h2>
           <span
@@ -10,14 +14,11 @@
               width="20"
               alt=""
           /></span>
-          The Daily News
+          THE DAILY NEWS
         </h2>
       </div>
       <div class="content">
-        <div class="loader" v-if="loading">
-          <b-spinner label="Spinning"></b-spinner>
-        </div>
-        <div class="section" v-else>
+        <div class="section">
           <section class="first">
             <div class="tags">
               <h6>Filter by Author</h6>
@@ -44,7 +45,7 @@
                 >
                   <img :src="item.image" alt="" v-if="item.image !== 'None'" />
                   <div v-else class="alt-image">
-                    <img src="../assets/img/news.svg" alt="" />
+                    <!-- <img src="../assets/img/news-alt.jpg" alt="" /> -->
                   </div>
                   <h5>{{ item.title }}</h5>
                   <p>
@@ -64,7 +65,7 @@
                 >
                   <img :src="item.image" alt="" v-if="item.image !== 'None'" />
                   <div v-else class="alt-image">
-                    <img src="../assets/img/news.svg" alt="" />
+                    <!-- <img src="../assets/img/news.svg" alt="" /> -->
                   </div>
                   <h5>{{ item.title }}</h5>
                   <p>
@@ -90,7 +91,7 @@
               >
                 <img :src="item.image" alt="" v-if="item.image !== 'None'" />
                 <div v-else class="yesterday-alt-image">
-                  <img src="../assets/img/news.svg" alt="" />
+                  <!-- <img src="../assets/img/news.svg" alt="" /> -->
                 </div>
                 <div class="card-content">
                   <h6>{{ item.title }}</h6>
@@ -274,6 +275,19 @@ img {
 }
 
 .overview {
+  .loader {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      width: 70px;
+      margin-bottom: 20px;
+    }
+  }
+
   .main {
     .header {
       background: #383e56;
@@ -300,13 +314,6 @@ img {
     .content {
       padding: 15px;
 
-      .loader {
-        height: 83vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
       .section {
         display: flex;
         flex-direction: column;
@@ -344,10 +351,13 @@ img {
                 height: 200px;
                 background: #f2f2f2;
                 margin-bottom: 10px;
+                background-image: url('../assets/img/news-alt.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
 
-                img {
-                  width: 40px;
-                }
+                // img {
+                //   width: 40px;
+                // }
               }
 
               p {
@@ -374,15 +384,18 @@ img {
 
               .yesterday-alt-image {
                 min-width: 200px;
-                max-width: 200px;
-                height: 110px;
+                height: 200px;
                 display: flex;
                 justify-content: center;
                 background: #f2f2f2;
 
-                img {
-                  width: 35px;
-                }
+                background-image: url('../assets/img/news-alt.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                // img {
+                //   width: 40px;
+                // }
               }
               .card-content p {
                 font-size: 13px;
@@ -434,6 +447,10 @@ img {
               display: flex;
               align-items: center;
               margin-bottom: 10px;
+
+              .yesterday-alt-image {
+                height: 110px;
+              }
 
               img {
                 width: 200px;
