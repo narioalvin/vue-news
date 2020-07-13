@@ -26,7 +26,9 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Public API and Icon
-[Currents API](https://www.edamam.com/)
-[Icon](https://www.flaticon.com/free-icon/fork_1046857?term=spoon%20and%20fork&page=1&position=13#)
+### Public API
+[Currents API](https://currentsapi.services/en)
+
+### Icon
+[Icon](https://www.flaticon.com/free-icon/newspaper_2971446?term=newspaper&page=1&position=4)
 
